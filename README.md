@@ -188,8 +188,5 @@
 ### E. Investigation Queries
 
 **Purpose:** Identify initial RDP access
-```kql
-DeviceLogonEvents
-| where DeviceName == "AZUKI-SL"
-| where LogonType == "RemoteInteractive"
-| project TimeGenerated, AccountName, RemoteIP
+
+#1 Flag Query 
