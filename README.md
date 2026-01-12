@@ -210,121 +210,139 @@ Query used: DeviceLogonEvents
 | where DeviceName == "azuki-sl"
 | where ActionType contains "logonsuccess" 
 | project TimeGenerated,AccountName,ActionType,DeviceName,LogonType,RemoteIP, RemoteIPType
-| order by TimeGenerated asc 
+| order by TimeGenerated asc
+```
 
 
 #3 Flag 🚩
 
+```
 Query used to find:
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 | where ProcessCommandLine contains "arp"
 | project TimeGenerated, AccountDomain,AccountName,ActionType,DeviceName,FileName,InitiatingProcessAccountDomain,InitiatingProcessAccountName,InitiatingProcessFileName,ProcessCommandLine 
 | order by TimeGenerated asc
+```
 
  
 
 #4 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 | where ProcessCommandLine contains "attrib"
 |project TimeGenerated,DeviceName,FileName,FolderPath,ProcessCommandLine
-|order by TimeGenerated asc 
+|order by TimeGenerated asc
+```
 
 
 
 #5 Flag🚩
 
+```
 DeviceRegistryEvents
 | where DeviceName contains "azuki"
 | where RegistryKey contains @"windows defender\exclusions\extensions"
-| order by TimeGenerated asc 
+| order by TimeGenerated asc
+```
+
 
 #6 Flag 🚩
 
+```
 DeviceRegistryEvents
 | where DeviceName contains "azuki"
 | where RegistryKey contains @"Exclusions\Paths"
 |project TimeGenerated,DeviceName,RegistryKey,RegistryValueName
-| order by TimeGenerated asc 
+| order by TimeGenerated asc
+```
 
 
 #7 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 | where ProcessCommandLine contains "http" or ProcessCommandLine contains "https"
 |project TimeGenerated,FileName,ProcessCommandLine,DeviceName
 |order by TimeGenerated asc 
-
+```
 
 
 #8 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki" 
 |where ProcessCommandLine contains "schtasks.exe" or ProcessCommandLine contains "/create"
 |project TimeGenerated, FileName,ProcessCommandLine,DeviceName
 |order by TimeGenerated asc 
-
+```
  
 
 #9 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki" 
 |where ProcessCommandLine contains "schtasks.exe" or ProcessCommandLine contains "/create"
 |project TimeGenerated, FileName,ProcessCommandLine,DeviceName
 |order by TimeGenerated asc 
-
+```
  
 
 #10 Flag 🚩
 
+```
 DeviceNetworkEvents
 | where DeviceName contains "azuki" 
 |where InitiatingProcessFileName  == "svchost.exe"
 | where InitiatingProcessFolderPath contains @"C:\ProgramData\WindowsCache"
 | project TimeGenerated,RemoteIP,RemotePort,InitiatingProcessFileName,InitiatingProcessFolderPath
 | sort by TimeGenerated asc 
-
+```
 
 
 
 
 #11 Flag 🚩
 
+```
 DeviceNetworkEvents
 | where DeviceName contains "azuki" 
 |where InitiatingProcessFileName  == "svchost.exe"
 | where InitiatingProcessFolderPath contains @"C:\ProgramData\WindowsCache"
 | project TimeGenerated,RemoteIP,RemotePort,InitiatingProcessFileName,InitiatingProcessFolderPath
 | sort by TimeGenerated asc 
-
+```
 
 
 #12 Flag 🚩
 
+```
 DeviceFileEvents
 |where FolderPath contains "WindowsCache"
 | where FileName endswith ".exe"
 |project TimeGenerated,DeviceName,FileName,FolderPath,InitiatingProcessFileName
 | sort by TimeGenerated asc 
-
+```
 
 
 #13 Flag 🚩
 
+```
 DeviceProcessEvents
 | where FolderPath contains "WindowsCache"
 | where FileName endswith ".exe"
 | project Timestamp, FileName, FolderPath, ProcessCommandLine
 | sort by Timestamp asc
-
+```
 
 #14 Flag 🚩
 
+```
 DeviceFileEvents
 | where DeviceName contains "azuki"
 |where ActionType == "FileCreated"
@@ -332,40 +350,44 @@ DeviceFileEvents
 |where FolderPath contains @"C:\ProgramData\WindowsCache"
 |project TimeGenerated, DeviceName,FileName,FolderPath
 |order by TimeGenerated asc 
-
+```
 
 #15 Flag 🚩
 
+```
 DeviceNetworkEvents
 | where DeviceName contains "azuki"
 | where InitiatingProcessCommandLine contains "WindowsCache"
 | project Timestamp, InitiatingProcessFileName, RemoteUrl, RemoteIP, RemotePort
 | sort by Timestamp asc
-
+```
 
 
 #16 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 |where ProcessCommandLine contains "wevtutil"
 |project TimeGenerated,DeviceName,FileName, ProcessCommandLine  
 |order by TimeGenerated asc 
-
+```
  
 
 #17 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 |where ProcessCommandLine contains "/add"
 |project TimeGenerated,DeviceName,FileName, ProcessCommandLine  
 |order by TimeGenerated asc 
-
+```
  
 
 #18 Flag 🚩
 
+```
 DeviceFileEvents
 | where DeviceName contains "azuki"
 |where FileName endswith ".ps1"
@@ -373,25 +395,27 @@ DeviceFileEvents
 |where FolderPath contains "temp"
 |project TimeGenerated,DeviceName,FileName,FolderPath, InitiatingProcessCommandLine  
 |order by TimeGenerated asc 
-
+```
  
 
 #19 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 |where ProcessCommandLine contains "cmdkey" or ProcessCommandLine contains "mstsc"
 | project TimeGenerated,DeviceName, FileName, ProcessCommandLine
 |order by  TimeGenerated asc 
-
+```
 
 
 #20 Flag 🚩
 
+```
 DeviceProcessEvents
 | where DeviceName contains "azuki"
 |where ProcessCommandLine contains "10.1.0.188"
 | project TimeGenerated,DeviceName, FileName, ProcessCommandLine
 |order by  TimeGenerated asc 
-
+```
  
