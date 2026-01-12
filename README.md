@@ -188,7 +188,7 @@
 ### E. Investigation Queries
 
 
-#1 🚩
+#1 Flag 🚩
 
 ```kql
 Query used: DeviceLogonEvents
