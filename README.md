@@ -189,6 +189,7 @@
 
 
 #1 Flag Query 
+
 Query used: DeviceLogonEvents
 | where DeviceName == "azuki-sl"
 | where ActionType contains "logonsuccess" 
