@@ -1,3 +1,6 @@
+<img width="469" height="691" alt="image" src="https://github.com/user-attachments/assets/13582ec1-ca24-423b-8393-99a17001c109" />
+
+
 # Incident Response Report
 
 **Date of Report:** 2026-01-11  
