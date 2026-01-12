@@ -199,7 +199,11 @@ Query used: DeviceLogonEvents
 ```
 
 
-<img width="1228" height="132" alt="image" src="https://github.com/user-attachments/assets/18df3fd1-a7cd-4d7c-ac3b-3bb9df914e67" />
+
+
+<img width="1142" height="256" alt="image" src="https://github.com/user-attachments/assets/f32537ec-d6bd-471a-ac6d-92cef907085f" />
+
+
 
 
 #2 Flag 🚩
@@ -214,6 +218,12 @@ Query used: DeviceLogonEvents
 ```
 
 
+
+<img width="587" height="223" alt="image" src="https://github.com/user-attachments/assets/8a684ae4-8e59-4cd0-888c-2a583e3f73d2" />
+
+
+
+
 #3 Flag 🚩
 
 ```
@@ -225,7 +235,9 @@ DeviceProcessEvents
 | order by TimeGenerated asc
 ```
 
- 
+
+ <img width="1164" height="218" alt="image" src="https://github.com/user-attachments/assets/6f671a37-116d-4579-b093-0b7b7cc111dd" />
+
 
 #4 Flag 🚩
 
